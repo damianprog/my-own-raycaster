@@ -1,0 +1,810 @@
+Lekcja 1.
+Liczby i oś liczbowa
+
+
+Liczba		Co znaczy
+x = 6.42	gdzie stoisz w poziomie
+y = 3.18	gdzie stoisz w pionie (patrząc z góry)
+θ = 0.78	w którą stronę patrzysz
+t = 4.03	jak daleko masz do ściany
+
+Cały nasz kurs polega na tym, żeby te cztery liczby umieć policzyć. 
+
+Znak minus to przełącznik kierunku. Nic więcej.
+
+Teraz coś, co zwykle jest wkuwane zamiast rozumiane. Co znaczy dodać liczbę ujemną?
+
+5 + (−3). Dodawanie każe iść w prawo. Ale liczba, którą dodajesz, ma znak minus — czyli sama w sobie wskazuje w lewo. Idziesz więc „w prawo o coś, co wskazuje w lewo", a to znaczy po prostu: idziesz w lewo. Lądujesz w 2.
+
+I teraz gwóźdź programu — odejmowanie liczby ujemnej: 5 − (−3).
+
+Odejmowanie każe iść w stronę przeciwną do tego, co odejmujesz. Odejmujesz −3, czyli coś, co wskazuje w lewo. Przeciwnie do „w lewo" to „w prawo". Idziesz więc 3 kroki w prawo i lądujesz w 8.
+
+Każdy znak minus odwraca kierunek. Dwa minusy to dwa odwrócenia — a odwrócić coś dwa razy znaczy wrócić do stanu wyjściowego.
+
+Dlatego −(−3) = 3. Nie dlatego, że „taka jest reguła", tylko dlatego, że obróciłeś się o 180° dwa razy i patrzysz tam, gdzie na początku.
+
+Jeszcze jedna różnica, o której łatwo zapomnieć: przy dodawaniu kolejność nie ma znaczenia, przy odejmowaniu ma. 3 + 5 i 5 + 3 dają to samo. Ale 5 − 3 = 2, a 3 − 5 = −2 — to zupełnie inne miejsca na osi.
+
+Klasyczna pomyłka
+Która liczba jest większa: −2.5 czy −2.05?
+
+Odpowiedź: −2.05. Popatrz na oś: −2.05 leży ledwie kawałek na lewo od −2, a −2.5 aż w połowie drogi do −3, czyli jeszcze dalej w lewo. Bardziej w prawo = większa. Przy liczbach ujemnych intuicja „większa cyfra po przecinku = większa liczba" działa odwrotnie.
+
+5 Mnożenie to skalowanie
+Dodawanie przesuwało. Mnożenie robi coś innego: rozciąga lub kurczy.
+
+Popatrz na strzałkę od zera do liczby a. Mnożenie przez s oznacza: zostaw początek strzałki w zerze, ale zmień jej długość s razy.
+
+s = −1	ta sama długość, przeciwna strona	−1 · 2 = −2
+s = −3	trzy razy dłuższa i odwrócona	−3 · 2 = −6
+Ostatnie dwa wiersze to sedno. Mnożenie przez liczbę ujemną robi dwie rzeczy naraz: skaluje i obraca o 180°.
+
+Mając to, reguła „minus razy minus daje plus" przestaje być regułą do zapamiętania i staje się oczywistością:
+
+(−1) · (−3) = 3
+obróć −3 o 180° → wylądujesz w +3
+
+Gdzie to wróci
+W lekcji 10 dokładnie ta sama operacja — mnożenie przez liczbę — zadecyduje, jak daleko wzdłuż promienia zajdziemy. Zapis t · D znaczy „weź kierunek D i rozciągnij go t razy". To jest ta sama czynność, tylko wykonana na strzałce leżącej na płaszczyźnie, a nie na osi.
+
+6 Dzielenie i zakazane zero
+
+Dzielenie odpowiada na pytanie: ile razy jedno mieści się w drugim?
+12 : 3 = 4, bo trójka mieści się w dwunastce cztery razy.
+
+10 : 0.5 = 20
+dzielenie przez liczbę mniejszą od 1 powiększa wynik
+
+Bo 1/0.5 = 2, więc dzielenie przez 0.5 to mnożenie przez 2.
+Im mniejsza liczba w mianowniku, tym większy wynik.
+Podziel przez 0.01, a wynik będzie sto razy większy.
+
+To będzie ważne w lekcji 15
+Wysokość ściany na ekranie liczymy jako stała : odległość. Właśnie dlatego ściana bardzo blisko Ciebie (mała odległość) zajmuje ogromną część ekranu. To nie jest sztuczka programisty — to naturalne zachowanie dzielenia.
+
+Dlaczego nie wolno dzielić przez zero
+Zadaj pytanie w wersji „ile razy się mieści": ile zer mieści się w piątce?
+
+Dokładasz zero, nadal masz nic. Dokładasz tysiąc zer, nadal masz nic. Nigdy nie uzbierasz pięciu. Nie ma takiej liczby — więc 5 : 0 nie ma wyniku.
+
+Gorzej z 0 : 0: ile zer mieści się w zerze? Jedno? Siedem? Milion? Każda odpowiedź pasuje, więc żadna nie jest tą właściwą. Dlatego to działanie też jest zakazane — tym razem nie z braku odpowiedzi, ale z ich nadmiaru.
+
+JavaScript nie protestuje, tylko zwraca dziwne wartości: 5/0 daje Infinity, a 0/0 daje NaN („Not a Number"). Jedno i drugie po cichu zatruwa wszystkie dalsze obliczenia.
+
+Zapowiedź prawdziwego problemu
+W lekcji 13 promień biegnący idealnie poziomo doprowadzi nas do dzielenia przez zero. To nie będzie błąd do naprawienia „na siłę" — to będzie sensowna sytuacja, w której odpowiedź „nieskończoność" jest właściwa i trzeba ją tylko poprawnie obsłużyć. Wtedy do tego wrócimy.
+
+7 Wartość bezwzględna: odległość bez kierunku
+
+Czasem interesuje nas wyłącznie jak daleko, a w ogóle nie obchodzi nas w którą stronę. Do tego służy wartość bezwzględna.
+
+|x|  =  odległość liczby x od zera
+zawsze dodatnia albo zero — nigdy ujemna
+
+|7|		7	siódemka leży 7 kroków od zera
+|−7|	7	też 7 kroków od zera, tylko w drugą stronę
+
+Gdzie to wróci
+Odległość gracza od ściany zawsze musi być liczbą dodatnią. Ściana nie może być „minus trzy metry stąd" — może być trzy metry w lewo, ale to jest już informacja o kierunku, przechowywana osobno. W lekcji 6 rozszerzymy ten pomysł na płaszczyznę i tak powstanie twierdzenie Pitagorasa.
+
+8 Zaokrąglanie i kratki
+
+Ostatni temat tej lekcji jest jednocześnie najbardziej „raycasterowy". Gracz stoi w 6.42. Świat jest podzielony na kratki o boku 1. W której kratce jest gracz?
+
+W szóstej — bo kratka numer 6 rozciąga się od 6 do 7, a 6.42 mieści się w tym przedziale. Operacja, która obcina ułamek w dół, nazywa się podłogą (ang. floor):
+
+floor(6.42) = 6
+numer kratki, w której leży punkt
+
+Operacja	Znaczenie						2.37	2.9		−2.3
+floor		w dół, zawsze w lewo na osi		2		2		−3
+
+zauważmy że zaokrąglenie w dół -2.3 daje -3
+a zaokrąglenie w dół 2.3 daje 2
+Wniosek: Zawsze w lewo na osi
+
+Pułapka, która zepsuje Ci mapę
+Popatrz na kolumnę −2.3. floor(−2.3) daje −3, a nie −2.
+
+Dlaczego? Bo „w dół" znaczy w lewo na osi liczbowej, a nie „w stronę zera". Na lewo od −2.3 leży −3. To jest logiczne w momencie, w którym myślisz o osi — i całkowicie mylące, jeśli myślisz „obetnij to, co po przecinku".
+
+
+Obcinanie po przecinku to osobna operacja, w JavaScripcie Math.trunc. Dla liczb dodatnich floor i trunc dają to samo, dla ujemnych różnią się o 1. Użycie trunc zamiast floor przy wyznaczaniu kratki to błąd, który objawia się dopiero po lewej stronie mapy i potrafi zająć wieczór.
+
+-2.3 trunc da -2
+a 
+-2.3 floor da -3
+
+bo trunc tylko ucina to co jest po przecinku
+
+Kratka n obejmuje przedział od n włącznie do n+1 wyłącznie.
+ Punkt dokładnie na krawędzi, na przykład 7.0, należy do kratki 7, a nie do 6. Ta konwencja („lewa krawędź należy do kratki, prawa już nie") jest w grafice standardem i dzięki niej kratki nie zachodzą na siebie.
+
+2.
+a) -5 
+b) −5 − (−2) Jak to rozumieć jako zachowanie na osi?
+odejmujemy liczbę ujemną czyli dwa odwrócenia zatem 
+najpierw odwracamy sie w lewo a następnie w prawo więc ruch jest w prawo
+zatem idziemy o 2 w prawo od -5 i lądujemy w -3
+
+c) -4 - 6
+Odejmujemy czyli odwracamy się od -4 o 6 jednostek w lewo zatem lądujemy w -10
+
+d) -4 + 4
+Dodajemy czyli odwracamy się od -4 w prawo i idziemy 4 jednostki zatem lądujemy w 0
+
+3. −3, −2.5, −2.05, 0.1, 2.05
+
+4.
+
+a)
+(−3) · 4 = -12 
+Skalujemy -3 czterokrotnie, znak pozostaje ten sam
+
+b)
+(−3) · (−4) = 12 
+* oznacza skalowanie, - oznacza odwrócenie strzałki na osi o 180 stopni
+skalujemy czterokrotnie zatem strzałka wskazuje na 3 po czterokrotnym powiększeniu strzałka wskazuje na 12
+
+c)
+0.5 · (−8)
+
+strzałka w lewo o długości 8, skrócona o połowę. Kierunek bez zmian, bo mnożnik dodatni.
+
+d)
+(−1) · (−1) · (−1)
+
+strzałka w lewo o długości 1 odwrócona w prawo a następnie odwrócona w lewo zatem wynik to -1
+Nieparzysta liczba minusów zawsze zostawia minus.
+
+5.
+|−7| + |3| − |−2|
+
+czyli 7 + 3 - 2 = 8
+
+|-4| + 9
+
+raczej powinno być po prostu
+
+|-4 - 9| = |-13| = 13
+
+różnice pomiędzy liczbami liczymy poprzez odejmowanie
+
+6.
+
+		floor		ceil		round
+2.37	2.00		3.00		2.00
+2.5		2.00		3.00		3.00
+-2.3	-3.00		-2.00		-2.00
+-0.4	-1.00		0.00		0.00
+5.0		5.00		6.00		5.00
+
+błąd przy 5.0 ceil bo powinno byc 5.00
+
+Jak to działa?
+Metoda Math.ceil() zaokrągla podaną liczbę w górę do najbliższej liczby całkowitej (zwraca najmniejszą liczbę całkowitą większą lub równą przekazanej wartości).Ponieważ liczba 5.00 jest już wartością całkowitą, funkcja nie zmienia jej wartości i zwraca dokładnie tę samą liczbę.
+
+7.
+
+6.8 - 9.5 = -2.7
+
+Jego nowa pozycja to x = -2.7
+
+Numer kratki to -2? Błąd
+Kratka: floor(−2.7) = −3. Uwaga — nie −2. Kratka nr −3 rozciąga się od −3 do −2, a −2.7 mieści się właśnie tam.
+
+w zasadzie jak chcemy sie dowiedzieć jaka jest kratka to zawsze .floor
+
+pokonana odległość to 9.5
+
+function cellIndex(pos) {
+	return Math.floor(pos);
+}
+
+8.
+
+ function cellIndex(pos) {return Math.floor(pos)}
+undefined
+❯ cellIndex(-2.7)
+-3
+❯ cellIndex(0.5)
+0
+❯ cellIndex(1.0)
+1
+❯ cellIndex(-0.5)
+-1
+❯ cellIndex(-1.0)
+-1
+❯ cellIndex(-1.5)
+-2
+❯ function cellIndex(pos) {return Math.trunc(pos)}
+undefined
+❯ cellIndex(-2.7)
+-2
+❯ cellIndex(0.5)
+0
+❯ cellIndex(-1.0)
+-1
+❯ cellIndex(-0.5)
+-0
+❯ cellIndex(-1.0)
+-1
+
+11. Checklista przed lekcją 2
+-2 jest większe od -5 bo na osi leży na prawo od -5
+
+ile wynosi 5 − (−3) i dlaczego
+
+stoimy na pozycji 5 strzałka jest skierowana w prawo napotykamy - zatem obracamy strzałkę o 180 stopni, napotykamy kolejny - zatem obracamy ponownie strzałkę o 180 stopni. Strzałka jest skierowana w prawo i następnie wydłużamy strzałkę o 3 jednostki zatem strzałka wskazuje na 8.
+
+wytłumaczyć komuś, dlaczego minus razy minus daje plus,
+
+mnożenie przez minus skaluje oraz odwraca strzałkę na osi o 180 stopni
+także dajmy na to strzałka wskazuje na -3 i mnożymy -3 przez -2 zatem minus przy dwójce oznacza odwrócenie strzałki o 180 stopni. Teraz strzałka wskazuje na 3 a następnie powiększamy strzałkę dwukrotnie zatem strzałka wskazuje na 6.
+
+obliczyć |a − b| i powiedzieć, co ta liczba oznacza,
+
+Liczba ta będzie oznaczać odległość pomiędzy a i b
+
+Dajmy na to chcemy się dowiedzieć jaka odległość jest pomiędzy -4 a 9
+
+|-4 - 9| = |-13| = 13. Odległość pomiędzy -4 a 9 to 13 jednostek
+
+podać numer kratki dla pozycji 6.8 oraz dla −2.7
+
+kratka dla 6.8 to 6
+Zawsze chcąc sie dowiedziec w jakiej kratce jesteśmy korzystamy z Math.floor
+ale to ma sens bo 0.1 to kratka zerowa 
+1.1 to kratka 1
+
+-2.7 to kratka nie -2 tylko -3
+Math.floor(-2.7) da nam -3
+
+bo kratka -0.2 to kratka -1
+
+wyjaśnić różnicę między Math.floor a Math.trunc.
+
+Math.floor zaokrągla liczbę w dół czyli 2.7 w dół to będzie 2.00
+Math.trunc ucina to co jest po przecinku 2.7 to również będzie 2.00
+Math.trunc -2.7 to będzie -2 a Math.floor -2.7 to będzie -3.00
+
+Dwie rzeczy do doprecyzowania (nie błędy, tylko język).
+
+W punkcie o 5 − (−3) mieszasz dwie różne strzałki. Masz pozycję (5) i osobno krok (−3). Obracasz nie pozycję, tylko krok. Precyzyjniej brzmiałoby: stoję w 5; krok wynosi −3, czyli wskazuje w lewo; odejmowanie odwraca krok, więc teraz wskazuje w prawo o 3; ląduję w 8. Wynik i mechanizm masz dobrze, chodzi tylko o to, żeby nie stracić z oczu, co jest czym.
+
+Lekcja 2 Zmienne, wyrażenia i równania
+
+Zwyczajowo na niewiadome i zmienne bierze się litery z końca alfabetu (x, y, t), a na stałe z początku (a, b, c, k). To tylko zwyczaj, ale ułatwia czytanie cudzych wzorów.
+
+−x nie musi być liczbą ujemną.
+
+Jeśli x = 5, to −x = −5. Ale jeśli x = −2, to −x = 2 — liczba dodatnia, mimo minusa w zapisie. Minus nie znaczy „ujemne". Minus znaczy „obróć to, co masz".
+
+Nawyk, który oszczędzi Ci setek błędów
+Podstawiając, zawsze wstawiaj liczbę w nawiasie. Zawsze, nawet gdy wygląda to na przesadę.
+
+Bez nawiasu: 2x + 5 dla x = −3 zamienia się w 2−3 + 5, co czyta się jako „dwa minus trzy" i daje 4. Błąd.
+
+Z nawiasem: 2·(−3) + 5 = −6 + 5 = −1. Poprawnie.
+
+Popatrz teraz na wyrażenie 2x + 5 oczami lekcji 1. Ono robi z liczbą x dwie rzeczy po kolei, i obie już znasz:
+
+1. skaluje — mnoży przez 2, czyli rozciąga strzałkę dwa razy,
+2. przesuwa — dodaje 5, czyli przenosi wynik o 5 w prawo.
+Całe wyrażenie to więc maszynka: liczba wchodzi, zostaje rozciągnięta, potem przesunięta, i wychodzi nowa liczba.
+
+Zatem 2 + 3 · 4 = 2 + 12 = 14. Jeśli chcesz najpierw dodawać, musisz to wymusić nawiasem: (2 + 3) · 4 = 20.
+
+
+Co wolno zrobić z równaniem
+Metafora wagi natychmiast daje listę dozwolonych ruchów. Każdy z nich zmienia wygląd równania, ale nie zmienia jego rozwiązania:
+
+Ruch								Warunek		Dlaczego działa
+dodaj to samo do obu stron			zawsze		dokładasz tyle samo na obie szalki
+odejmij to samo od obu stron		zawsze		zdejmujesz tyle samo z obu szalek
+pomnóż obie strony przez to samo	mnożnik ≠ 0	skalujesz obie szalki jednakowo
+podziel obie strony przez to samo	dzielnik ≠ 0	j.w., tylko w drugą stronę
+
+
+Dlaczego zakaz mnożenia przez zero
+Weź fałszywe równanie 3 = 5 i pomnóż obie strony przez 0. Dostajesz 0 = 0 — zdanie prawdziwe. Mnożenie przez zero zamieniło fałsz w prawdę, czyli zgubiło informację.
+
+5. Rozwiązywanie krok po kroku
+Cel jest zawsze ten sam: doprowadzić równanie do postaci „x = coś". Litera sama po lewej, konkretna liczba po prawej.
+
+Strategia to obieranie cebuli. Popatrz, co się dzieje z x w wyrażeniu 2x + 5: najpierw mnożenie przez 2, potem dodanie 5. Żeby dojść do gołego x, cofasz te operacje w odwrotnej kolejności — najpierw odkręcasz dodawanie, potem mnożenie.
+
+2x + 5 = 11        ← równanie wyjściowe
+2x = 6               ← odjęliśmy 5 od obu stron
+x = 3                ← podzieliliśmy obie strony przez 2
+I teraz rzecz, której nigdy nie wolno pomijać — sprawdzenie. Podstawiamy wynik do oryginalnego równania:
+
+2·(3) + 5 = 6 + 5 = 11  ✓
+
+Sprawdzenie kosztuje dziesięć sekund i wyłapuje praktycznie każdą pomyłkę znakową. Rób je zawsze.
+
+Kiedy rozwiązania nie ma albo jest ich nieskończenie wiele
+Nie każde równanie ma dokładnie jedno rozwiązanie. Gdy a = 0, litera x znika z równania i zostaje samo zdanie o liczbach:
+
+0·x + 5 = 11 upraszcza się do 5 = 11 — zdanie fałszywe niezależnie od x. Brak rozwiązań.
+0·x + 5 = 5 upraszcza się do 5 = 5 — zdanie prawdziwe niezależnie od x. Każda liczba jest rozwiązaniem.
+
+Gdzie to wróci
+To nie jest ciekawostka dla teoretyków. W lekcji 13 promień biegnący idealnie poziomo ma zerową składową pionową — i pytanie „kiedy przetnie najbliższą linię poziomą?" staje się dokładnie równaniem z a = 0. Odpowiedź „nigdy" jest wtedy poprawna i trzeba ją umieć obsłużyć, zamiast dopuścić do awarii programu.
+
+6. Przekształcanie wzoru
+
+Do tej pory po prawej stronie stała liczba. Ale technika jest dokładnie ta sama, gdy wszystko dookoła to litery. Wtedy nie „obliczamy x", tylko wyznaczamy jedną literę przez pozostałe.
+
+Weźmy wzór, który będzie sercem całego kursu:
+
+P = O + t · D
+
+gdzie jesteś (P), gdzie zacząłeś (O), ile kroków (t), jaki krok (D)
+
+Ten jeden zapis odpowiada na cztery różne pytania — zależnie od tego, którą literę potraktujesz jako niewiadomą. Wyznaczmy t, bo to pytanie zadaje raycaster:
+
+P = O + t·D          ← wzór wyjściowy
+P − O = t·D        ← odjęliśmy O od obu stron
+(P − O) : D = t    ← podzieliliśmy obie strony przez D
+
+t = (P − O) : D
+ile kroków dzieli Cię od celu
+
+„odległość, jaką masz do pokonania, podzielona przez długość jednego kroku, daje liczbę kroków"
+
+Kiedy wzór da się przeczytać jak zdanie, przestaje być czymś do zapamiętania.
+
+t = (4 − 1) : 0.6 = 3 : 0.6 = 5
+Pięć kroków. I zwróć uwagę na jedną rzecz z lekcji 1: dzielenie przez 0.6, czyli przez liczbę mniejszą od jedynki, powiększyło wynik — bo małymi krokami trzeba ich zrobić więcej.
+
+Dwie pułapki JavaScriptu, o których warto wiedzieć od razu
+1. Ułamki są przybliżone. 0.1 + 0.2 daje 0.30000000000000004, a nie 0.3. Komputer zapisuje ułamki w systemie dwójkowym i część z nich nie mieści się dokładnie. Dlatego wyników obliczeń nigdy nie porównuje się przez ===, tylko sprawdza, czy różnica jest dostatecznie mała. Wrócimy do tego w lekcji 13.
+
+2. Minus przed potęgą. Zapis -3 ** 2 to w JavaScripcie błąd składni — język celowo wymaga nawiasów, bo (-3) ** 2 = 9, a -(3 ** 2) = -9 i nie da się zgadnąć, o co Ci chodziło. Potęgi dokładniej w lekcji 3.
+
+9. Zadania
+
+Przy każdym zadaniu z podstawianiem pisz liczbę w nawiasie. Przy każdym równaniu rób sprawdzenie. To dwa nawyki, które warto wyrobić teraz, bo w lekcji 13 będą ratować Ci wieczory.
+
+1. Dla wyrażenia 3x − 7 oblicz wartość przy x = 4 oraz przy x = −2. Następnie podaj wartość −x dla x = −2.
+
+3x - 7
+x = 4
+
+3 * (4) - 7 = 5
+
+3x - 7
+x = -2
+
+3 * (-2) - 7 = -6 - 7 = -13
+
+-x 
+x = -2
+
+-(-2) = 2
+
+odwrócenie zatem 2
+
+Wynik jest dodatni, mimo minusa w zapisie — minus obraca kierunek, a x już wskazywał w lewo.
+
+2.
+
+a) 2 + 3 * 4 = 2 + 12 = 14
+
+b) (2 + 3) * 4 = 5 * 4 = 20
+
+c) 10 - 2 * 3 = 10 - 6 = 4
+
+d) 12 : 4 - 1 = 3 - 1 = 2
+
+e) 12 : (4 - 1) = 12 : 3 = 4
+
+f) 10 - 3 - 2 = (10 - 3) - 2 = 7 - 2 = 5
+
+3. 
+
+a) x + 7 = 3
+
+Metoda cebuli
+
+najpierw od obu stron odejmujemy 7
+
+x = 3 - 7
+
+x = -4
+
+Sprawdzenie: (−4) + 7 = 3
+
+b) 5x = -20
+
+zaczynamy od cofnięcia mnożenia przez 5 a to robimy dzieląc dwie strony przez 5
+
+x = -4
+
+Sprawdzenie: 5·(−4) = −20
+
+c) 2x + 5 = 11
+
+zaczynamy od cofnięcia dodawania 5 do obu stron
+
+2x = 11 - 5
+
+2x = 6
+
+teraz cofamy mnożenie przez 2 zatem dzielimy obie strony przez 2
+
+x = 3
+
+2·(3) + 5 = 11
+
+4. 
+-3x + 4 = 10
+
+zaczynamy od odjęcia 4 od obu stron
+
+-3x = 6
+
+teraz cofamy mnożenie -3 dzieląc obie strony przez -3
+
+x = 6 / (-3) = -2
+
+Sprawdzamy
+
+-3 * (-2) + 4 = 10
+
+stoimy w -3 następnie obracamy i skalujemy wydłużając strzałkę dwukrotnie
+
+po obrocie stoimy w 3 
+
+po skalowaniu stoimy w 6
+
+zatem 6 + 4 = 10
+
+10 = 10 Prawda
+
+rzucic okiem na mnożenie w pierwszej lekcji
+
+5. 
+0.6t = 3
+
+dzielimy obie strony przez 0.6
+
+t = 3 / 0.6 = 5
+
+Jeśli stoimy w 0 to należy wykonać 5 kroków aby dotrzeć od 0 do 3.
+
+6. 
+
+wyznacz D
+
+P = O + t*D
+
+Zacznijmy od odjęcia O od obu stron
+
+P - O = t*D
+
+Teraz podzielmy obie strony przez t
+
+D = (P - O) / t
+
+O = 2, P = 8, t = 4
+
+D = (8 - 2) / 4
+
+D = 6 / 4
+
+D = 1.5
+
+7. 
+f(x) = 4x - 1
+
+f(0) = 4 * (0) - 1 = 0 - 1 = -1
+
+f(3) = 4 * (3) - 1 = 12 - 1 = 11
+
+f(-2) = 4 * (-2) - 1 = -8 - 1 = -9
+
+
+f(x) = 11
+
+4x - 1 = 11
+
+skoro usuwamy z lewej strony -1 to zwiększamy wartość lewej strony o 1
+zatem dla równowagi należy zwiększyć wartość prawej strony również o 1
+
+4x = 12
+
+x = 12 / 4
+
+x = 3
+
+
+8.
+
+a = 2
+b = 5
+c = 11
+
+a*x + b = c
+
+2x + 5 = 11
+
+2x = 6 
+
+x = 3
+
+a*x + b = c
+
+a*x = c - b
+
+x = (c - b) / a
+
+
+function solve(a, b, c) {
+  if (a === 0) {
+    return b === c ? "kazda liczba" : "brak rozwiazan";
+  }
+  const x = (c - b) / a;
+
+  return x;
+}
+
+ale dlaczego kiedy dojdzie do 0 / 0 to rozwiązaniem jest każda liczba?
+
+a·x + b = c
+
+bo jeśli a to jest 0 to nieważne co będzie stało pod x bo a*x da nam zawsze 0.
+więc jeśli b i c są równe to równanie jest prawdziwe dla jakiejkolwiek liczby pod x.
+
+Zasada dzielenia: Dzielenie to odwrotność mnożenia. Jeśli a : b = c, to c ⋅ b = a.
+Dowolność wyniku: Dla działania 0 : 0 = c szukamy liczby c, która spełnia równanie c ⋅ 0 = 0.
+
+
+Checklista 
+
+1. wyrażenie to przepis na liczbę a równanie to twierdzenie że dwie rzeczy są równe
+
+2. -x dla x = -2
+
+-(-2) = 2
+
+3. 
+12 : (4 - 1)
+
+Nawias ma pierwszeństwo
+
+więc 12 / 3 = 4
+
+12 : 4 - 1
+
+brak nawiasu, dzielenie ma pierwszeństwo
+
+3 - 1 = 2
+
+4. 
+−3x + 4 = 19
+
+odejmijmy 4 od obu stron
+
+-3x = 19 - 4
+
+-3x = 15
+
+podzielmy obie strony przez -3
+
+x = -5
+
+Sprawdzenie:
+-3 * (-5) + 4 = 19
+
+15 + 4 = 19
+
+19 = 19 Zgadza się
+
+5.
+Wyznacz t
+
+P = O + t·D
+
+odejmijmy O od obu stron
+
+P - O = t*D
+
+podzielmy obie strony przez D
+
+(P - O) / D = t 
+
+Stoimy w O chcemy dotrzeć do P. Sprawdzamy odległość pomiędzy O a P. D to długość jednego kroku. Dzielimy odległość przez długość jednego kroku i wynik to ilość kroków które trzeba wykonać aby dotrzeć z O do P.
+
+6. powiedzieć, co znaczy f(−2) i dlaczego to nie jest mnożenie.
+ale czym jest f? f(-2) to po prostu wynik funkcji dla -2.
+
+
+Pułapka, przez którą przechodzi każdy
+Ile wynosi −4²? A ile (−4)²? To nie jest to samo.
+
+(−4)² = (−4) · (−4) = 16    ← nawias mówi: całe −4 do kwadratu
+−4² = −(4 · 4) = −16      ← potęga idzie przed minusem
+W drugim przypadku minus nie należy do potęgowanej liczby. Potęga jest wyżej w kolejności działań, więc najpierw liczymy 4², a dopiero potem obracamy wynik.
+
+dlaczego kwadrat liczby ujemnej wychodzi dodatni.  Dajmy na to -4 do potęgi 2. Mogę to rozumieć tak że strzałka najpierw wskazuje na -4 ale mnożymy przez -4 więc minus obraca strzałkę a następnie powiększamy ją (skalujemy) czterokrotnie?
+
+Tak, dokładnie tak. Twój opis jest poprawny co do joty: strzałka wskazuje na −4, mnożnik −4 najpierw ją obraca (teraz wskazuje na +4), potem wydłuża czterokrotnie — i lądujesz na +16.
+
+Pułapka, która zniszczyłaby Ci lekcję 6
+√(a + b) to nie to samo co √a + √b. Sprawdź na liczbach:
+
+√(9 + 16) = √25 = 5, natomiast √9 + √16 = 3 + 4 = 7.
+
+Demo 4
+
+Wysokość ściany jest odwrotnie proporcjonalna do odległości od niej
+
+Zadania
+
+1. 
+a) 4 ** 2 = 16
+
+b) (-4) ** 2 = 16
+
+c) -4 ** 2 = -16
+
+w c podnosimy do kwadratu samo 4 a minus mnoży nam wynik razy -1
+
+d) 2 ** 3 = 8
+
+e) 1 ** 5 = 1
+
+2.
+
+a) sqrt(49) = 7
+
+b) sqrt(0) = 0
+
+c) sqrt(1) = 1
+
+d) sqrt(9 + 16) = sqrt(25) = 5
+
+e) sqrt(9) + sqrt(16) = 3 + 4 = 7
+
+sqrt(9 + 16) nie można rozbić na sqrt(9) + sqrt(16)
+
+3. 
+
+a) 2 + 3 * 4 ** 2 = 2 + 3 * 16 = 2 + 48 = 50
+
+b) (2 + 3) * 4 ** 2 = (2 + 3) * 16 = 5 * 16 = 80
+
+c) 2 * 3 ** 2 = 2 * 9 = 18
+
+d) (2 * 3) ** 2 = 36
+
+
+4.
+
+Skoro bok kwadratu to 3 to na ten kwadrat składają się 3 rzędy po 3 kwadraty co razem daje 9 kwadratów. Kiedy bok wynosi 6 to mamy 6 rzędów po 6 kwadratów co razem daje 36 kwadratów w kwadracie.
+
+Wytłumaczyłem to sugerując się demkiem pokazującym ilość kwadracików w kwadracie o danym boku. Może być? Mogę to tak rozumieć?
+
+5.
+
+y = 3x
+
+czyli na wartość y składa się 3 razy wartość x. y jest 3 razy większy od x.
+
+x = 0
+y = 3 * 0 = 0
+
+x = 1
+y = 3 * 1 = 3
+
+x = 2
+y = 3 * 2 = 6
+
+x = 5
+y = 3 * 5 = 15
+
+x = 10
+y = 3 * 10 = 30
+
+Jeśli podwoje x to y staje się dwa razy większe.
+W każdym wierszu y : x jest taki sam czyli 3. Poza x = 0.
+
+6. 
+y = 12 : x
+
+x = 1
+y = 12 : 1 = 12
+x * y = 1 * 12 = 12
+
+x = 2
+y = 12 : 2 = 6
+x * y = 2 * 6 = 12
+
+x = 3
+y = 12 : 3 = 4
+
+x = 4
+y = 12 : 4 = 3
+
+x = 6
+y = 12 : 6 = 2
+
+x = 12
+y = 12 : 12 = 1
+
+W każdym wierszu x * y wynosi tyle samo czyli 12
+Kiedy podwoimy x to y staje się 2 razy mniejszy
+
+7.
+wysokość = 600 : d
+
+d = 1
+wysokość = 600 : 1 = 600
+
+d = 2
+wysokość = 600 : 2 = 300
+
+d = 3
+wysokość = 600 : 3 = 200
+
+d = 6
+wysokość = 600 : 6 = 100
+
+d = 10
+wysokość = 600 : 10 = 60
+
+150 = 600 : d
+
+mnożymy obie strony przez 600?
+W sensie myślałem że będziemy tu "odkręcać" dzielenie mnożeniem
+
+a tu chodzi o to żeby pomnożyć przez d
+
+Wytłumacz mi to bo nie rozumiem do końca.
+
+Claude:
+Gdzie siedzi problem
+
+Metoda cebuli, której używałeś do tej pory, brzmi: „popatrz, co jest robione z niewiadomą, i cofnij to w odwrotnej kolejności".
+
+W równaniu 2x + 5 = 11 z x faktycznie coś robiono: pomnożono je przez 2 i dodano 5. Cofasz po kolei i gotowe.
+
+Ale popatrz uważnie na 150 = 600 : d. Z d nikt nic nie robi. To d coś robi — jest dzielnikiem. Nie siedzi na wierzchu wyrażenia, tylko na dole ułamka. To zupełnie inna pozycja i wymaga innego ruchu.
+
+To jest cała różnica. Twoja metoda była dobra, tylko zastosowana do niewłaściwej liczby: patrzyłeś na 600, bo 600 jest widoczne i „wygląda na to, co trzeba usunąć". Tymczasem 600 nie zasłania Ci d — d jest po prostu w innym piętrze.
+
+Back to moja dedukcja
+
+d * wysokość jest zawsze równe stałej k
+
+stała to 600
+
+a wiemy że wysokość to 150
+
+więc 150d = 600
+
+teraz obie strony przez 150 i otrzymujemy
+d = 4
+
+
+
+d = 6
+wysokość = 600 : 6 = 100
+
+d = -6
+
+wysokość = 600 : (-6) = -100
+
+
+
+
+
+
+
+
+
+
+
