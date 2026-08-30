@@ -799,6 +799,115 @@ d = -6
 wysokość = 600 : (-6) = -100
 
 
+PS C:\Projects\test> node .\wall-height.js
+Odległość:  1
+Wysokość:  600
+Odległość * Wysokość:  600
+Odległość:  2
+Wysokość:  300
+Odległość * Wysokość:  600
+Odległość:  3
+Wysokość:  200
+Odległość * Wysokość:  600
+Odległość:  4
+Wysokość:  150
+Odległość * Wysokość:  600
+Odległość:  5
+Wysokość:  120
+Odległość * Wysokość:  600
+Odległość:  6
+Wysokość:  100
+Odległość * Wysokość:  600
+Odległość:  7
+Wysokość:  85.71428571428571
+Odległość * Wysokość:  600
+Odległość:  8
+Wysokość:  75
+Odległość * Wysokość:  600
+Odległość:  9
+Wysokość:  66.66666666666667
+Odległość * Wysokość:  600
+Odległość:  10
+Wysokość:  60
+Odległość * Wysokość:  600
+
+Iloczyn Odległość * Wysokość zawsze jest taki sam
+
+Trzecia kolumna to 600 w każdym wierszu. To bezpośrednie potwierdzenie definicji: przy proporcjonalności odwrotnej iloczyn obu wielkości jest stały.
+
+To jest też praktyczny sposób sprawdzania takiego kodu. Jeśli kiedyś w lekcji 15 wysokości zaczną wyglądać podejrzanie, wypisz iloczyn — jeśli nie jest stały, błąd siedzi we wzorze, a nie w rysowaniu.
+
+Checklista
+
+1.
+(-4) ** 2 = 16 Bo potęgujemy to co jest w nawiasie
+
+-4 ** 2 = to jest -1 * 4 ** 2 czyli -16
+
+2. 
+
+bo dodatnia * dodatnia strzałka jest skierowana cały czas w prawą stronę 
+natomiast ujemna * ujemna to najpierw strzałka wskazuje w lewo następnie - drugiej liczby odwraca strzałkę o 180 stopni w prawo a następnie skalujemy już bez żadnego odwracania strzałki.
+
+3. 
+
+sqrt(9+16) wiem że nie można rozdzielić na sqrt(9) + sqrt(16)
+
+sqrt(25) czyli jaka liczba podniesiona do kwadratu da 25?
+czy jest to sqrt(9) + sqrt(16) czyli 3 + 4 = 7?
+Sprawdźmy 7 ** 2 = 49 NIE.
+
+4.
+
+Sugerując się demkiem z kwadracikami wewnątrz dużego kwadratu to np. na kwadrat o boku 2 składają się 2 rzędy w każdym po 2 kwadraty czyli 4 kwadraciki.
+Jeśli zwiększymy bok do 4 to otrzymamy 4 rzędy po 4 kwadraciki czyli razem 16.
+Pole po zwiększeniu boku dwukrotnie zwiększa się czterokrotnie.
+
+5. 
+
+y = k * x 
+y = k : x
+
+y = k · x — stały jest iloraz y : x (zawsze k). Podwajasz x, podwaja się y.
+
+y to jest k iksów więc ile iksów mieści się w y? k
+
+albo po prostu algebraicznie metodą cebuli
+interesuje nas k więc odkręćmy jego mnożenie poprzez dzielenie obu stron przez x
+
+y : x = k
+
+y = k : x — stały jest iloczyn x · y (zawsze k). Podwajasz x, y spada o połowę.
+
+tu odkręćmy dzielenie k poprzez mnożenie obu stron przez x
+
+y * x = k
+
+ile razy x mieści się w k? y
+więc y * x = k
+
+6.
+
+Proporcjonalność odwrotnia pomiędzy odległością a wysokością ściany.
+Kiedy odległość staje się większa wysokość ściany staje się mniejsza.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
