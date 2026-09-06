@@ -891,12 +891,12 @@ więc y * x = k
 Proporcjonalność odwrotnia pomiędzy odległością a wysokością ściany.
 Kiedy odległość staje się większa wysokość ściany staje się mniejsza.
 
+#22303d
+
+informacja na której osi doszło do kolizji i blokownie ruchu tylko na tej osi
 
 
-
-
-
-
+pytanie gdzie chcemy wejść a nie możemy?
 
 
 

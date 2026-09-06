@@ -1,8 +1,10 @@
+import { BLOCK_TYPE } from "./block-type.js";
 export default class Block {
-  constructor(game, position, color) {
+  constructor(game, position, type) {
     this.game = game;
     this.position = position;
-    this.color = color;
+    this.type = type;
+    this.color = this.type === BLOCK_TYPE.wall ? "#0d1117" : "#f2f4f7";
     this.size = 50;
   }
 

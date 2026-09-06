@@ -4,6 +4,7 @@ import Block from "./block.js";
 import { BOARD } from "./board.js";
 import Position from "./position.js";
 import Input from "./input.js";
+import { BLOCK_TYPE } from "./block-type.js";
 
 export default class Game {
   constructor(gameWidth, gameHeight) {
@@ -32,9 +33,10 @@ export default class Game {
 
     for (let y = 0; y < BOARD.length; y++) {
       for (let x = 0; x < BOARD[y].length; x++) {
-        const blockColor = BOARD[y][x] === 1 ? "#0d1117" : "#f2f4f7";
+        const blockType =
+          BOARD[y][x] === 1 ? BLOCK_TYPE.wall : BLOCK_TYPE.floor;
         const blockPosition = new Position(x * 50, y * 50);
-        this.blocks.push(new Block(this, blockPosition, blockColor));
+        this.blocks.push(new Block(this, blockPosition, blockType));
       }
     }
   }
