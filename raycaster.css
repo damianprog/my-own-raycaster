@@ -1,0 +1,43 @@
+body {
+  background: #666;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 0;
+  margin: 0;
+}
+
+canvas {
+  background: #000;
+}
+
+.main-container {
+  width: 500px;
+  display: flex;
+  position: relative;
+}
+.main-container canvas {
+  display: block;
+} /* usuwa 4px baseline gap */
+.main-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  --cell: 50px;
+  --line: #22303d;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      var(--line) 0 1px,
+      transparent 1px var(--cell)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--line) 0 1px,
+      transparent 1px var(--cell)
+    );
+}
