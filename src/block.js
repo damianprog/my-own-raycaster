@@ -1,5 +1,7 @@
 import { BLOCK_TYPE } from "./block-type.js";
 export default class Block {
+  static SIZE = 50;
+
   constructor(game, position, type) {
     this.game = game;
     this.position = position;
@@ -13,6 +15,6 @@ export default class Block {
   draw(ctx) {
     ctx.beginPath();
     ctx.fillStyle = this.color;
-    ctx.fillRect(this.position.x, this.position.y, this.size, this.size);
+    ctx.fillRect(this.position.x, this.position.y, Block.SIZE, Block.SIZE);
   }
 }
