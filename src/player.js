@@ -1,5 +1,4 @@
 import Position from "./position.js";
-import { MOVING_DIRECTION } from "./moving-direction.js";
 import { BOARD } from "./board.js";
 import Block from "./block.js";
 
@@ -9,7 +8,8 @@ export default class Player {
     this.size = 20;
     this.speedX = 0;
     this.speedY = 0;
-    this.currentMovingDirection = MOVING_DIRECTION.UP;
+    this.turnSpeed = 0;
+    this.angle = 0;
     this.setStartingPosition();
   }
 
@@ -22,6 +22,17 @@ export default class Player {
     ctx.arc(this.position.x, this.position.y, this.size / 2, 0, 2 * Math.PI);
     ctx.fillStyle = "blue";
     ctx.fill();
+
+    ctx.save();
+    ctx.translate(this.position.x, this.position.y);
+    ctx.rotate(this.angle);
+
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(40, 0);
+    ctx.stroke();
+
+    ctx.restore();
   }
 
   isCollisionWithWall(x, y) {
@@ -37,6 +48,8 @@ export default class Player {
   }
 
   update(deltaTime) {
+    this.angle = this.normalizeAngle(this.angle + this.turnSpeed * deltaTime);
+
     const destinationX = this.position.x + this.speedX * deltaTime;
     if (!this.isCollisionWithWall(destinationX, this.position.y)) {
       this.position.x = destinationX;
@@ -46,6 +59,11 @@ export default class Player {
     if (!this.isCollisionWithWall(this.position.x, destinationY)) {
       this.position.y = destinationY;
     }
+  }
+
+  normalizeAngle(angle) {
+    const full = 2 * Math.PI;
+    return ((angle % full) + full) % full;
   }
 
   moveLeft() {
@@ -64,8 +82,17 @@ export default class Player {
     this.speedY = 0.1;
   }
 
+  turnLeft() {
+    this.turnSpeed = -0.005;
+  }
+
+  turnRight() {
+    this.turnSpeed = 0.005;
+  }
+
   stop() {
     this.speedX = 0;
     this.speedY = 0;
+    this.turnSpeed = 0;
   }
 }

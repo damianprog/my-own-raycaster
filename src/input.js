@@ -19,6 +19,14 @@ export default class Input {
         case "ArrowUp":
           this.player.moveUp();
           break;
+
+        case "a":
+          this.player.turnLeft();
+          break;
+
+        case "d":
+          this.player.turnRight();
+          break;
       }
     });
 
@@ -36,6 +44,14 @@ export default class Input {
           break;
 
         case "ArrowDown":
+          this.player.stop();
+          break;
+
+        case "a":
+          this.player.stop();
+          break;
+
+        case "d":
           this.player.stop();
           break;
       }

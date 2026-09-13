@@ -899,6 +899,119 @@ informacja na której osi doszło do kolizji i blokownie ruchu tylko na tej osi
 pytanie gdzie chcemy wejść a nie możemy?
 
 
+Ponieważ średnica to dwa promienie, wzór na obwód najczęściej zapisuje się przez promień:
+obwód = 2 · π · r
+
+π jest zdefiniowane jako stosunek obwodu do średnicy:
+
+π = obwód / d → obwód = π · d
+
+Czyli: przejście dookoła koła jest zawsze ~3,14 razy dłuższe niż przejście przez jego środek. To jest sedno — reszta to podstawienie.
+
+
+jeśli promień = 1 to 1 radian to łuk o długości promienia czyli 1
+
+obwód / średnica = Math.PI 
+
+Ile razy średnica mieści się w obwodzie? Math.PI
+
+zatem Math.PI razy średnica = obwód
+
+to jeśli promień = 1 
+oraz obwód = średnica (czyli 2 razy promień) * Math.PI
+to razem nam daje obwód = 2 * 1 * Math.PI
+zatem obwód koła dla promienia 1 to 2 * Math.PI, dwa pi
+
+
+1 radian to łuk o długości promienia a ile promieni wchodzi w obwód koła?
+
+czyli ile łuków o długości promienia mieści się w długości obwodu koła
+
+skoro obwód to 2 * Math.PI * promień to odpowiedzią jest: w długości obwodu koła mieści się 2 * Math.PI promieni.
+
+Więc skoro 1 radian to łuk o długości promienia to w obwodzie koła mieści się 2 * Math.PI radianów czyli około 6.28
+
+a dlaczego obwód koła to 2 * promień * Math.PI ?
+
+bo w obwodzie koła mieści się Math.PI średnicy a średnica to 2 * promień
+
+Przeliczanie:
+
+radiany = stopnie * pełen obrót koła w radianach / 360
+czyli: stopnie * 2 * Math.PI radianów / 360
+
+90 stopni, ile to radianów?
+
+radiany = 90 * 6.28 / 360
+
+Jaką częścią pełnego obrotu jest 90°?
+
+1/4, 25%
+
+Ile wynosi ta sama część z 2π?
+
+2 * Math.PI / 4
+
+
+radiany = (stopnie / 360) * 2π
+           ↑ krok 1        ↑ krok 2
+         jaka część    ile to z pełnego
+         obrotu           obrotu w rad
+
+czyli jaką częścią całości sa dane stopnie
+
+i potem tę częśc całości mnożymy razy pełen obrót w radianach
+
+w ten sposob dowiadujemy się ile to jest stopni w radianach
+
+to można skrócić i otrzymać radiany = (stopnie / 180) * Math.PI
+
+stopnie = (radiany / 2 * Math.PI) * 360
+
+czyli mając ileś radianów sprawdzamy jaka to jest częśc pełnego obrotu w radianach
+a następnie tę częśc mnożymy razy pełen obrót w stopniach
+
+radiany = stopnie · π : 180
+stopnie = radiany · 180 : π
+
+
+question:
+czy zmiane angle tez nalezy znormalizować przez deltaTime?
+powinno być turnSpeed który będzie normalizowany przez deltaTime i dodawany w update do this.angle
+
+((kąt % 360) + 360) % 360
+
+kąt dajmy na to 180 stopni
+
+180 % 360 = 180
+
+180 + 360 = 540
+
+540 % 360 = 180
+
+
+(kąt % 360) + 360) % 360
+//  ↑ warstwa 1   ↑ 2     ↑ 3
+kąt % 360 — zbija dużą liczbę do jednego obrotu, ale zachowuje znak: 450 → 90, -90 → -90
++ 360 — wypycha ewentualny minus na plus: -90 → 270, ale 90 → 450 (za dużo)
+% 360 — sprząta tę nadwyżkę: 450 → 90, 270 → 270 (bo 270 < 360, więc zostaje bez zmian)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
