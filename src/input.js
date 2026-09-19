@@ -1,3 +1,5 @@
+import Position from "./position.js";
+
 export default class Input {
   constructor(game) {
     this.game = game;
@@ -55,6 +57,15 @@ export default class Input {
           this.player.stop();
           break;
       }
+    });
+
+    const canvasElement = document.querySelector("canvas");
+
+    document.addEventListener("mousedown", (event) => {
+      const rect = canvasElement.getBoundingClientRect();
+      const x = event.clientX - rect.x;
+      const y = event.clientY - rect.y;
+      this.game.createPoint(new Position(x, y));
     });
   }
 }

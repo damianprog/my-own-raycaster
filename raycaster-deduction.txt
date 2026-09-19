@@ -999,9 +999,17 @@ kąt % 360 — zbija dużą liczbę do jednego obrotu, ale zachowuje znak: 450 �
 
 
 
+Przeciwprostokątna jest zawsze najdłuższym bokiem
 
+większa z przyprostokątnych < przeciwprostokątna < suma przyprostokątnych
 
+Ta nierówność przyda Ci się jako szybkie sprawdzenie wyniku. Jeśli policzysz odległość i wyjdzie mniejsza od Δx albo większa od Δx + Δy — na pewno gdzieś jest błąd.
 
+zamiast   √(Δx² + Δy²)  <  √(Δx'² + Δy'²)
+wystarczy   Δx² + Δy²  <  Δx'² + Δy'²
+
+Reguła praktyczna
+Licz pierwiastek tylko wtedy, gdy naprawdę potrzebujesz liczby. Jeśli tylko porównujesz albo sprawdzasz zasięg — zostań przy kwadratach.
 
 
 

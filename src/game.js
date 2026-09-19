@@ -5,6 +5,7 @@ import { BOARD } from "./board.js";
 import Position from "./position.js";
 import Input from "./input.js";
 import { BLOCK_TYPE } from "./block-type.js";
+import Point from "./point.js";
 
 export default class Game {
   constructor(gameWidth, gameHeight) {
@@ -18,6 +19,9 @@ export default class Game {
   draw(ctx) {
     this.blocks.forEach((block) => block.draw(ctx));
     this.player.draw(ctx);
+    if (this.point) {
+      this.point.draw(ctx);
+    }
   }
 
   update(deltaTime) {
@@ -39,5 +43,9 @@ export default class Game {
         this.blocks.push(new Block(this, blockPosition, blockType));
       }
     }
+  }
+
+  createPoint(position) {
+    this.point = new Point(this, position);
   }
 }
