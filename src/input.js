@@ -50,11 +50,11 @@ export default class Input {
           break;
 
         case "a":
-          this.player.stop();
+          this.player.stopTurn();
           break;
 
         case "d":
-          this.player.stop();
+          this.player.stopTurn();
           break;
       }
     });

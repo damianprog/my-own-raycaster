@@ -1011,21 +1011,30 @@ wystarczy   Δx² + Δy²  <  Δx'² + Δy'²
 Reguła praktyczna
 Licz pierwiastek tylko wtedy, gdy naprawdę potrzebujesz liczby. Jeśli tylko porównujesz albo sprawdzasz zasięg — zostań przy kwadratach.
 
+Skalowanie zmienia długości, ale nie rusza kątów.
+Kąt nie ma rozmiaru, więc nie ma czego skalować. To pozornie oczywiste spostrzeżenie jest fundamentem całej trygonometrii.
+
+Cecha kąt-kąt
+Jeśli dwa trójkąty mają dwa takie same kąty, to są podobne. Trzeci kąt dopasuje się sam, a wszystkie stosunki boków wyjdą równe automatycznie.
+
+Dla trójkątów prostokątnych upraszcza się to jeszcze bardziej. Jeden kąt — ten prosty — mają wspólny z definicji. Wystarczy więc, że zgadza się jeden pozostały kąt:
+
+dwa trójkąty prostokątne + jeden wspólny kąt ostry  =  podobne
+to jest cały mechanizm, na którym stoi trygonometria
+Zapamiętaj tę linijkę. W lekcji 8 zbudujemy na niej sinus i cosinus.
 
 
+Stosunek dwóch boków trójkąta prostokątnego zależy wyłącznie od jego kątów. Rozmiar nie ma z tym nic wspólnego.
+
+Twierdzenie Talesa:
+
+AD / AB = AE / AC
+
+sin i cos to dwie liczby z zakresu 0…1 opisujące „kształt” kąta ostrego: cosinus mówi, jaka część kroku idzie wzdłuż ramienia kąta, sinus — jaka część idzie w poprzek. tan = sin / cos, więc tangens to nachylenie: ile w poprzek na jedną jednostkę wzdłuż.
 
 
-
-
-
-
-
-
-
-
-
-
-
+Pułapka
+Math.atan(dy/dx) to klasyczny błąd, który objawia się tak: potwory po jednej stronie gracza celują poprawnie, a po drugiej odwracają się dokładnie tyłem. Dodatkowo dla dx = 0 masz dzielenie przez zero. Reguła: jeśli masz dwie delty, zawsze używaj atan2(dy, dx), nigdy atan z ilorazu.
 
 
 

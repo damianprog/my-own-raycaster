@@ -6,8 +6,10 @@ export default class Player {
   constructor(game) {
     this.game = game;
     this.size = 20;
-    this.speedX = 0;
-    this.speedY = 0;
+    // this.speedX = 0;
+    // this.speedY = 0;
+    this.speed = 0;
+    this.direction = 1;
     this.turnSpeed = 0;
     this.angle = 0;
     this.setStartingPosition();
@@ -50,12 +52,16 @@ export default class Player {
   update(deltaTime) {
     this.angle = this.normalizeAngle(this.angle + this.turnSpeed * deltaTime);
 
-    const destinationX = this.position.x + this.speedX * deltaTime;
+    const destinationX =
+      this.position.x + Math.cos(this.angle) * this.speed * deltaTime;
+
     if (!this.isCollisionWithWall(destinationX, this.position.y)) {
       this.position.x = destinationX;
     }
 
-    const destinationY = this.position.y + this.speedY * deltaTime;
+    const destinationY =
+      this.position.y + Math.sin(this.angle) * this.speed * deltaTime;
+
     if (!this.isCollisionWithWall(this.position.x, destinationY)) {
       this.position.y = destinationY;
     }
@@ -67,19 +73,19 @@ export default class Player {
   }
 
   moveLeft() {
-    this.speedX = -0.1;
+    // this.speedX = -this.speed;
   }
 
   moveRight() {
-    this.speedX = 0.1;
+    // this.speedX = this.speed;
   }
 
   moveUp() {
-    this.speedY = -0.1;
+    this.speed = 0.1;
   }
 
   moveDown() {
-    this.speedY = 0.1;
+    this.speed = -0.1;
   }
 
   turnLeft() {
@@ -91,8 +97,10 @@ export default class Player {
   }
 
   stop() {
-    this.speedX = 0;
-    this.speedY = 0;
+    this.speed = 0;
+  }
+
+  stopTurn() {
     this.turnSpeed = 0;
   }
 }
