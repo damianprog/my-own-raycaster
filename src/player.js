@@ -6,12 +6,11 @@ export default class Player {
   constructor(game) {
     this.game = game;
     this.size = 20;
-    // this.speedX = 0;
-    // this.speedY = 0;
     this.speed = 0;
-    this.direction = 1;
+    this.strafeSpeed = 0;
     this.turnSpeed = 0;
     this.angle = 0;
+    this.strafeAngle = 0;
     this.setStartingPosition();
   }
 
@@ -50,17 +49,58 @@ export default class Player {
   }
 
   update(deltaTime) {
+    this.setSpeeds();
+
+    this.setAngles(deltaTime);
+
+    const dx =
+      (Math.cos(this.angle) * this.speed +
+        Math.cos(this.strafeAngle) * this.strafeSpeed) *
+      deltaTime;
+    const dy =
+      (Math.sin(this.angle) * this.speed +
+        Math.sin(this.strafeAngle) * this.strafeSpeed) *
+      deltaTime;
+
+    this.move(dx, dy);
+  }
+
+  setSpeeds() {
+    const pressedKeys = this.game.input.pressedKeys;
+
+    this.speed = pressedKeys.has("ArrowUp")
+      ? 0.1
+      : pressedKeys.has("ArrowDown")
+        ? -0.1
+        : 0;
+
+    this.strafeSpeed = pressedKeys.has("d")
+      ? 0.1
+      : pressedKeys.has("a")
+        ? -0.1
+        : 0;
+
+    this.turnSpeed = pressedKeys.has("ArrowLeft")
+      ? -0.005
+      : pressedKeys.has("ArrowRight")
+        ? 0.005
+        : 0;
+  }
+
+  setAngles(deltaTime) {
     this.angle = this.normalizeAngle(this.angle + this.turnSpeed * deltaTime);
 
-    const destinationX =
-      this.position.x + Math.cos(this.angle) * this.speed * deltaTime;
+    this.strafeAngle = this.angle + Math.PI / 2;
+  }
+
+  move(x, y) {
+    const destinationX = this.position.x + x;
 
     if (!this.isCollisionWithWall(destinationX, this.position.y)) {
       this.position.x = destinationX;
     }
 
-    const destinationY =
-      this.position.y + Math.sin(this.angle) * this.speed * deltaTime;
+    const destinationY = this.position.y + y;
 
     if (!this.isCollisionWithWall(this.position.x, destinationY)) {
       this.position.y = destinationY;
@@ -70,37 +110,5 @@ export default class Player {
   normalizeAngle(angle) {
     const full = 2 * Math.PI;
     return ((angle % full) + full) % full;
-  }
-
-  moveLeft() {
-    // this.speedX = -this.speed;
-  }
-
-  moveRight() {
-    // this.speedX = this.speed;
-  }
-
-  moveUp() {
-    this.speed = 0.1;
-  }
-
-  moveDown() {
-    this.speed = -0.1;
-  }
-
-  turnLeft() {
-    this.turnSpeed = -0.005;
-  }
-
-  turnRight() {
-    this.turnSpeed = 0.005;
-  }
-
-  stop() {
-    this.speed = 0;
-  }
-
-  stopTurn() {
-    this.turnSpeed = 0;
   }
 }

@@ -1036,7 +1036,15 @@ sin i cos to dwie liczby z zakresu 0…1 opisujące „kształt” kąta ostrego
 Pułapka
 Math.atan(dy/dx) to klasyczny błąd, który objawia się tak: potwory po jednej stronie gracza celują poprawnie, a po drugiej odwracają się dokładnie tyłem. Dodatkowo dla dx = 0 masz dzielenie przez zero. Reguła: jeśli masz dwie delty, zawsze używaj atan2(dy, dx), nigdy atan z ilorazu.
 
+const destinationX =
+      this.position.x + Math.cos(this.angle) * this.speed * deltaTime;
 
+    if (!this.isCollisionWithWall(destinationX, this.position.y)) {
+      this.position.x = destinationX;
+    }
+
+    const destinationY =
+      this.position.y + Math.sin(this.angle) * this.speed * deltaTime;
 
 
 
