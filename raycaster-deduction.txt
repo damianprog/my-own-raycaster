@@ -1047,6 +1047,38 @@ const destinationX =
       this.position.y + Math.sin(this.angle) * this.speed * deltaTime;
 
 
+nigdy nie porównuj wyników trygonometrycznych przez ===. Jeśli musisz sprawdzić „czy zero”, pisz Math.abs(x) < 1e-9.
+
+skonczone na lekcja 9, 10. Najkrótszy obrót
+
+
+Nie rozumiem dlaczego "Musiało tak być bo beta + gamma = 90 stopni" ok wiem że jeśli mamy kąt prosty w trójkącie to suma pozostałych kątów musi być równa 90 aby dopłnić do 180 stopni.
+
+skonczone na chat Raycaster Lekcja 8 zadanie drugie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
